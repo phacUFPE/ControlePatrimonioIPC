@@ -5,7 +5,7 @@ class ApplicationController < ActionController::Base
     if user_signed_in?
       super
     else
-      redirect_to equipment_index_url
+      redirect_to new_user_session_url
     end
   end
 end
