@@ -1,0 +1,47 @@
+<%= form_with(model: equipment, local: true) do |form| %>
+  <% if equipment.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(equipment.errors.count, "error") %> prohibited this equipment from being saved:</h2>
+
+      <ul>
+      <% equipment.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :equipment_id %>
+    <%= form.number_field :equipment_id, id: :equipment_equipment_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_area :name, id: :equipment_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :brand %>
+    <%= form.text_area :brand, id: :equipment_brand %>
+  </div>
+
+  <div class="field">
+    <%= form.label :model %>
+    <%= form.text_area :model, id: :equipment_model %>
+  </div>
+
+  <div class="field">
+    <%= form.label :description %>
+    <%= form.text_area :description, id: :equipment_description %>
+  </div>
+
+  <div class="field">
+    <%= form.label :price %>
+    <%= form.text_field :price, id: :equipment_price %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

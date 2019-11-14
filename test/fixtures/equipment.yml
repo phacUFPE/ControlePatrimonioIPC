@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  equipment_id: 1
+  name: MyText
+  brand: MyText
+  model: MyText
+  description: MyText
+  price: 9.99
+
+two:
+  equipment_id: 1
+  name: MyText
+  brand: MyText
+  model: MyText
+  description: MyText
+  price: 9.99
