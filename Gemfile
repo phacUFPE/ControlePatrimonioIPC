@@ -37,7 +37,12 @@ gem 'jbuilder', '~> 2.5'
 gem 'devise'
 
 # Bootstrap gem
-gem 'bootstrap-sass'
+gem 'bootstrap'
+
+# Jquery gem
+gem 'jquery-rails'
+
+gem 'autoprefixer-rails', '9.7.1'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
