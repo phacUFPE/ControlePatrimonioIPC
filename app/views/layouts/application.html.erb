@@ -7,9 +7,52 @@
     <%= stylesheet_link_tag     'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag  'application', 'data-turbolinks-track': 'reload' %>
 
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+
+    <nav class="navbar navbar-inverse navbar-expand-sm fixed-top">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <%= link_to image_tag("/images/ipcandeias_black.png"), new_user_session_path %>
+        </div>
+        <ul class="nav navbar-nav navbar-left">
+          <li>
+            <%= link_to "Equipments", equipment_index_url, class: "nav-link" %>
+          </li>
+          &nbsp;
+          <li>
+            <%= link_to "Groups", groups_url, class: "nav-link" %>
+          </li>
+          <li>
+            <%= link_to "Users", users_url, class: "nav-link" %>
+          </li> 
+        </ul>
+        
+        <ul class="nav navbar-nav navbar-right">
+          <li>
+            <% if current_user %>
+              <%= link_to raw("<span class='glyphicon glyphicon-log-out'></span> &nbsp; Logout"), destroy_user_session_path, method: :get, class: "nav-link" %>
+            <% else %>
+              <%= link_to raw("<span class='glyphicon glyphicon-log-in'></span> &nbsp; Login"), new_user_session_path, class: "nav-link" %>
+            <% end %>
+          </li>
+        </ul>
+      </div>
+    </nav>
   </head>
 
   <body>
-    <%= yield %>
+    <div class="container pt-5">
+      <% unless notice.nil? %>
+        <div class="alert alert-info alert-dismissable">
+          <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
+          <%= notice %>
+        </div>
+      <% end %>
+
+      <%= yield %>
+    </div>
   </body>
 </html>

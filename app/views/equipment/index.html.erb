@@ -1,8 +1,13 @@
-<p id="notice"><%= notice %></p>
-
 <h1>Equipment</h1>
 
-<table>
+<br />
+
+<%= link_to 'New Equipment', new_equipment_path, class: "btn btn-success" %>
+
+<br />
+<br />
+
+<table class="table table-hover">
   <thead>
     <tr>
       <th>Equipment</th>
@@ -24,14 +29,10 @@
         <td><%= equipment.model %></td>
         <td><%= equipment.description %></td>
         <td><%= equipment.price %></td>
-        <td><%= link_to 'Show', equipment %></td>
-        <td><%= link_to 'Edit', edit_equipment_path(equipment) %></td>
-        <td><%= link_to 'Destroy', equipment, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show', equipment, class: "btn btn-info" %></td>
+        <td><%= link_to 'Edit', edit_equipment_path(equipment), class: "btn btn-warning" %></td>
+        <td><%= link_to 'Destroy', equipment, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
-
-<br>
-
-<%= link_to 'New Equipment', new_equipment_path %>

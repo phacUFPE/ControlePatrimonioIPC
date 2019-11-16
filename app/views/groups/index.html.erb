@@ -2,7 +2,14 @@
 
 <h1>Groups</h1>
 
-<table>
+<br />
+
+<%= link_to 'New Group', new_group_path, class: "btn btn-success" %>
+
+<br />
+<br />
+
+<table class="table table-hover">
   <thead>
     <tr>
       <th>Group cod</th>
@@ -18,14 +25,12 @@
         <td><%= group.group_cod %></td>
         <td><%= group.name %></td>
         <td><%= group.description %></td>
-        <td><%= link_to 'Show', group %></td>
-        <td><%= link_to 'Edit', edit_group_path(group) %></td>
-        <td><%= link_to 'Destroy', group, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show', group, class: "btn btn-info" %></td>
+        <td><%= link_to 'Edit', edit_group_path(group), class: "btn btn-warning" %></td>
+        <td><%= link_to 'Destroy', group, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
 <br>
-
-<%= link_to 'New Group', new_group_path %>
