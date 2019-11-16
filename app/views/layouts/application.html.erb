@@ -17,26 +17,28 @@
         <div class="navbar-header">
           <%= link_to image_tag("/images/ipcandeias_black.png"), new_user_session_path %>
         </div>
-        <ul class="nav navbar-nav navbar-left">
-          <li>
-            <%= link_to "Equipments", equipment_index_url, class: "nav-link" %>
-          </li>
-          &nbsp;
-          <li>
-            <%= link_to "Groups", groups_url, class: "nav-link" %>
-          </li>
-          <li>
-            <%= link_to "Users", users_url, class: "nav-link" %>
-          </li> 
-        </ul>
+        <% if current_user %>
+          <ul class="nav navbar-nav navbar-left">
+            <li>
+              <%= link_to "Equipments", equipment_index_url, class: "nav-link" %>
+            </li>
+            &nbsp;
+            <li>
+              <%= link_to "Groups", groups_url, class: "nav-link" %>
+            </li>
+            <li>
+              <%= link_to "Users", users_url, class: "nav-link" %>
+            </li> 
+          </ul>
         
-        <ul class="nav navbar-nav navbar-right">
-          <li>
-            <% if current_user %>
-              <%= link_to raw("<span class='glyphicon glyphicon-log-out'></span> &nbsp; Logout"), destroy_user_session_path, method: :get, class: "nav-link" %>
-            <% else %>
+          <ul class="nav navbar-nav navbar-right">
+            <li>
+                <%= link_to raw("<span class='glyphicon glyphicon-log-out'></span> &nbsp; Logout"), destroy_user_session_path, method: :get, class: "nav-link" %>
+        <% else %>
+          <ul class="nav navbar-nav navbar-right">
+            <li>
               <%= link_to raw("<span class='glyphicon glyphicon-log-in'></span> &nbsp; Login"), new_user_session_path, class: "nav-link" %>
-            <% end %>
+        <% end %>
           </li>
         </ul>
       </div>

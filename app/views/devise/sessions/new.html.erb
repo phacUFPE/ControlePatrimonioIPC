@@ -5,8 +5,7 @@
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
 
   <%= f.label :email, for: "loginInputEmail" %>
-  <%= f.email_field :email, class: "form-control", id: "loginInputEmail", autocomplete: "email", placeholder: "Enter email" %>
-  <small id="weNotShare" class="form-text text-muted">We'll never share your email with anyone else.</small>
+  <%= f.email_field :email, class: "form-control", id: "loginInputEmail", autocomplete: "email", placeholder: "email@example.com" %>
 
   <br />
 
