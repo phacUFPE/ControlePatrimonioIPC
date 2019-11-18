@@ -4,7 +4,7 @@ class Group < ApplicationRecord
     validates :id, :presence => true
     validates :name, :presence => true
 
-    def description
+    def show_description
         if self[:description] != nil
             if self[:description].gsub(/\s+/, "") == ""
                 self[:description] = "No description"
