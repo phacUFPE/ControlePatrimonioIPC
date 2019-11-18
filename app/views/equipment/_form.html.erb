@@ -13,6 +13,15 @@
 
   <br />
 
+  <%= form.label :group_code %> <br />
+  <select name="groups[group_cod]" class="form-control">
+    <% Group.all.each do |groups| %>
+        <option value="<%= groups.group_cod %>"><%= groups.name %></option>
+    <% end %>
+  </select>
+
+  <br />
+
   <%= form.label :equipment_id %>
   <%= form.number_field :equipment_id, id: :equipment_equipment_id, class: "form-control", placeholder: "1" %>
 
