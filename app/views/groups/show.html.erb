@@ -2,7 +2,7 @@
 
 <p>
   <strong>Group cod:</strong>
-  <%= @group.id %>
+  <%= @group.show_id %>
 </p>
 
 <p>
@@ -12,7 +12,7 @@
 
 <p>
   <strong>Description:</strong>
-  <%= @group.description %>
+  <%= @group.show_description %>
 </p>
 
 <br />
@@ -23,3 +23,29 @@
 <br />
 
 <%= link_to 'Back', groups_path, class: "btn btn-info" %>
+ 
+<hr class="stylized">
+
+<h3> Group Equipments </h3>
+
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th>Code</th>
+      <th>Equipment</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @equips_by_group.each do |equips_group| %>
+      <tr>
+        <td><%= equips_group.full_code %></td>
+        <td><%= equips_group.name %></td>
+        <td><%= link_to 'Show', equips_group, class: "btn btn-info" %></td>
+        <td><%= link_to 'Edit', edit_equipment_path(equips_group), class: "btn btn-warning" %></td>
+        <td><%= link_to 'Delete', equips_group, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
