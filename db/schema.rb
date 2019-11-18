@@ -22,12 +22,13 @@ ActiveRecord::Schema.define(version: 20191114051738) do
     t.text "model"
     t.text "description"
     t.decimal "price"
+    t.bigint "group_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["group_id"], name: "index_equipment_on_group_id"
   end
 
   create_table "groups", force: :cascade do |t|
-    t.integer "group_cod"
     t.text "name"
     t.text "description"
     t.datetime "created_at", null: false
@@ -48,4 +49,5 @@ ActiveRecord::Schema.define(version: 20191114051738) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "equipment", "groups"
 end

@@ -15,7 +15,9 @@ class EquipmentController < ApplicationController
 
   # GET /equipment/new
   def new
+    @group     = Group.new
     @equipment = Equipment.new
+    #@group.equipment.build
   end
 
   # GET /equipment/1/edit
@@ -25,12 +27,19 @@ class EquipmentController < ApplicationController
   # POST /equipment
   # POST /equipment.json
   def create
+    @group     = Group.find(equipment_params[:group_id])
     @equipment = Equipment.new(equipment_params)
-
+    
     respond_to do |format|
-      if @equipment.save
-        format.html { redirect_to @equipment, notice: 'Equipment was successfully created.' }
-        format.json { render :show, status: :created, location: @equipment }
+      if @group
+        @equipment.group = @group
+        if @equipment.save
+          format.html { redirect_to @equipment, notice: 'Equipment was successfully created.' }
+          format.json { render :show, status: :created, location: @equipment }
+        else
+          format.html { render :new }
+          format.json { render json: @equipment.errors, status: :unprocessable_entity }
+        end
       else
         format.html { render :new }
         format.json { render json: @equipment.errors, status: :unprocessable_entity }
@@ -70,6 +79,6 @@ class EquipmentController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def equipment_params
-      params.require(:equipment).permit(:equipment_id, :name, :brand, :model, :description, :price)
+      params.require(:equipment).permit(:id, :equipment_id, :name, :brand, :model, :description, :price, :group_id)
     end
 end
