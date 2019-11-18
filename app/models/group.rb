@@ -12,7 +12,7 @@ class Group < ApplicationRecord
         end
     end
 
-    def id
+    def show_id
         if self[:id] != nil
             self[:id].to_s.rjust(3, '0')
         end

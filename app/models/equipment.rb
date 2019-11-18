@@ -6,7 +6,7 @@ class Equipment < ApplicationRecord
     validates :brand, :presence => true
     validates :model, :presence => true
 
-    def description
+    def show_description
         if self[:description] != nil
             if self[:description].gsub(/\s+/, "") == ""
                 self[:description] = "No description"
@@ -14,13 +14,13 @@ class Equipment < ApplicationRecord
         end
     end
 
-    def equipment_id
+    def show_equipment_id
         if self[:equipment_id] != nil
             self[:equipment_id].to_s.rjust(6, '0')
         end
     end
 
-    def group_id
+    def show_group_id
         if self[:group_id] != nil
             self[:group_id].to_s.rjust(3, '0')
         end
