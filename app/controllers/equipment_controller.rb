@@ -1,5 +1,6 @@
 class EquipmentController < ApplicationController
   before_action :authenticate_user!
+  before_action :get_group, only: [:show]
   before_action :set_equipment, only: [:show, :edit, :update, :destroy]
 
   # GET /equipment
@@ -17,7 +18,6 @@ class EquipmentController < ApplicationController
   def new
     @group     = Group.new
     @equipment = Equipment.new
-    #@group.equipment.build
   end
 
   # GET /equipment/1/edit
@@ -80,5 +80,9 @@ class EquipmentController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def equipment_params
       params.require(:equipment).permit(:id, :equipment_id, :name, :brand, :model, :description, :price, :group_id)
+    end
+
+    def get_group
+      @equipment_group = Group.find(params[:id])
     end
 end
