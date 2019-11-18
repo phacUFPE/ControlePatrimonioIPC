@@ -13,9 +13,6 @@
 
   <br />
 
-
-  <%= @equipment.attributes %> <br />
-
   <%= form.label :group %> <br />
   <%= form.collection_select :group_id, Group.all, :id, :name, {prompt: false}, {class: "form-control"} %>
 

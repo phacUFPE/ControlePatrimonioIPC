@@ -10,8 +10,9 @@
 <table class="table table-hover">
   <thead>
     <tr>
+      <th>Group</th>
+      <th>Code</th>
       <th>Equipment</th>
-      <th>Name</th>
       <th>Brand</th>
       <th>Model</th>
       <th>Description</th>
@@ -23,7 +24,8 @@
   <tbody>
     <% @equipment.each do |equipment| %>
       <tr>
-        <td><%= equipment.equipment_id %></td>
+        <td><%= link_to Group.find(equipment.group_id).name, group_path(equipment.group_id) %></td>
+        <td><%= equipment.full_code %></td>
         <td><%= equipment.name %></td>
         <td><%= equipment.brand %></td>
         <td><%= equipment.model %></td>

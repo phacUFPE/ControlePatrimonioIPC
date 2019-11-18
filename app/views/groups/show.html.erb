@@ -15,5 +15,11 @@
   <%= @group.description %>
 </p>
 
-<%= link_to 'Edit', edit_group_path(@group) %> |
-<%= link_to 'Back', groups_path %>
+<br />
+
+<%= link_to 'Edit', edit_group_path(@group), class: "btn btn-warning" %>
+
+<br />
+<br />
+
+<%= link_to 'Back', groups_path, class: "btn btn-info" %>

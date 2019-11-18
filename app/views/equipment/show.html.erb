@@ -1,8 +1,13 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Equipment:</strong>
-  <%= @equipment.equipment_id %>
+  <strong>Code:</strong>
+  <%= @equipment.full_code %>
+</p>
+
+<p>
+  <strong>Group:</strong>
+  <%= link_to Group.find(@equipment.group_id).name, group_path(@equipment.group_id) %>
 </p>
 
 <p>
@@ -30,5 +35,11 @@
   <%= @equipment.price %>
 </p>
 
-<%= link_to 'Edit', edit_equipment_path(@equipment) %> |
-<%= link_to 'Back', equipment_index_path %>
+<br />
+
+<%= link_to 'Edit', edit_equipment_path(@equipment), class: "btn btn-warning" %>
+
+<br />
+<br />
+
+<%= link_to 'Back', equipment_index_path, class: "btn btn-info" %>
