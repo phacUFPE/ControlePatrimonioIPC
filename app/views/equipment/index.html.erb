@@ -29,11 +29,11 @@
         <td><%= equipment.name %></td>
         <td><%= equipment.brand %></td>
         <td><%= equipment.model %></td>
-        <td><%= equipment.description %></td>
+        <td><%= equipment.show_description %></td>
         <td><%= equipment.price %></td>
         <td><%= link_to 'Show', equipment, class: "btn btn-info" %></td>
         <td><%= link_to 'Edit', edit_equipment_path(equipment), class: "btn btn-warning" %></td>
-        <td><%= link_to 'Destroy', equipment, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %></td>
+        <td><%= link_to 'Delete', equipment, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %></td>
       </tr>
     <% end %>
   </tbody>

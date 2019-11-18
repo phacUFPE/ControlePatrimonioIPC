@@ -12,7 +12,7 @@
 <table class="table table-hover">
   <thead>
     <tr>
-      <th>Group cod</th>
+      <th>Group code</th>
       <th>Name</th>
       <th>Description</th>
       <th colspan="3"></th>
@@ -22,15 +22,13 @@
   <tbody>
     <% @groups.each do |group| %>
       <tr>
-        <td><%= group.id %></td>
+        <td><%= group.show_id %></td>
         <td><%= group.name %></td>
-        <td><%= group.description %></td>
+        <td><%= group.show_description %></td>
         <td><%= link_to 'Show', group, class: "btn btn-info" %></td>
         <td><%= link_to 'Edit', edit_group_path(group), class: "btn btn-warning" %></td>
-        <td><%= link_to 'Destroy', group, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %></td>
+        <td><%= link_to 'Delete', group, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
-
-<br>

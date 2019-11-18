@@ -7,7 +7,7 @@
 
 <p>
   <strong>Group:</strong>
-  <%= link_to Group.find(@equipment.group_id).name, group_path(@equipment.group_id) %>
+  <%= link_to @equipment_group.name, group_path(@equipment_group) %>
 </p>
 
 <p>
@@ -27,7 +27,7 @@
 
 <p>
   <strong>Description:</strong>
-  <%= @equipment.description %>
+  <%= @equipment.show_description %>
 </p>
 
 <p>
