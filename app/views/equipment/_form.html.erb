@@ -48,8 +48,8 @@
 
   <br />
 
-  <div class="actions">
-    <%= form.submit "Create Equipment", class: "btn btn-success" %>
-  </div>
+  <%= button_tag(type: 'submit', class: "btn btn-success") do %>
+    <span class="glyphicon glyphicon-floppy-disk"></span>&nbsp;&nbsp;Save
+  <% end %>
 
 <% end %>

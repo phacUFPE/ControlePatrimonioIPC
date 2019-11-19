@@ -17,12 +17,12 @@
 
 <br />
 
-<%= link_to 'Edit', edit_group_path(@group), class: "btn btn-warning" %>
+<%= link_to raw('<span class="glyphicon glyphicon-pencil"></span>&nbsp;&nbsp;Edit'), edit_group_path(@group), class: "btn btn-warning" %>
 
 <br />
 <br />
 
-<%= link_to 'Back', groups_path, class: "btn btn-info" %>
+<%= link_to raw('<span class="glyphicon glyphicon-arrow-left"></span>&nbsp;&nbsp;Back'), groups_path, class: "btn btn-info" %>
  
 <hr class="stylized">
 
@@ -42,9 +42,9 @@
       <tr>
         <td><%= equips_group.full_code %></td>
         <td><%= equips_group.name %></td>
-        <td><%= link_to 'Show', equips_group, class: "btn btn-info" %></td>
-        <td><%= link_to 'Edit', edit_equipment_path(equips_group), class: "btn btn-warning" %></td>
-        <td><%= link_to 'Delete', equips_group, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %></td>
+        <td><%= link_to raw('<span class="glyphicon glyphicon-eye-open"></span>&nbsp;&nbsp;Show'), equips_group, class: "btn btn-info" %></td>
+        <td><%= link_to raw('<span class="glyphicon glyphicon-pencil"></span>&nbsp;&nbsp;Edit'), edit_equipment_path(equips_group), class: "btn btn-warning" %></td>
+        <td><%= link_to raw('<span class="glyphicon glyphicon-trash"></span>&nbsp;&nbsp;Delete'), equips_group, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %></td>
       </tr>
     <% end %>
   </tbody>

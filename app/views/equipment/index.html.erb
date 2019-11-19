@@ -2,7 +2,7 @@
 
 <br />
 
-<%= link_to 'New Equipment', new_equipment_path, class: "btn btn-success" %>
+<%= link_to raw('<span class="glyphicon glyphicon-plus"></span>&nbsp;&nbsp;Equipment'), new_equipment_path, class: "btn btn-success" %>
 
 <br />
 <br />
@@ -10,30 +10,30 @@
 <table class="table table-hover">
   <thead>
     <tr>
-      <th>Group</th>
-      <th>Code</th>
-      <th>Equipment</th>
-      <th>Brand</th>
-      <th>Model</th>
-      <th>Description</th>
-      <th>Price</th>
-      <th colspan="3"></th>
+      <th class="text-center">Group</th>
+      <th class="text-center">Code</th>
+      <th class="text-center">Equipment</th>
+      <th class="text-center">Brand</th>
+      <th class="text-center">Model</th>
+      <th class="text-center">Description</th>
+      <th class="text-center">Price</th>
+      <th class="text-center" colspan="3">Options</th>
     </tr>
   </thead>
 
   <tbody>
     <% @equipment.each do |equipment| %>
       <tr>
-        <td><%= link_to Group.find(equipment.group_id).name, group_path(equipment.group_id) %></td>
-        <td><%= equipment.full_code %></td>
-        <td><%= equipment.name %></td>
-        <td><%= equipment.brand %></td>
-        <td><%= equipment.model %></td>
-        <td><%= equipment.show_description %></td>
-        <td><%= equipment.price %></td>
-        <td><%= link_to 'Show', equipment, class: "btn btn-info" %></td>
-        <td><%= link_to 'Edit', edit_equipment_path(equipment), class: "btn btn-warning" %></td>
-        <td><%= link_to 'Delete', equipment, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %></td>
+        <td class="text-center"><%= link_to Group.find(equipment.group_id).name, group_path(equipment.group_id) %></td>
+        <td class="text-center"><%= equipment.full_code %></td>
+        <td class="text-center"><%= equipment.name %></td>
+        <td class="text-center"><%= equipment.brand %></td>
+        <td class="text-center"><%= equipment.model %></td>
+        <td class="text-center"><%= equipment.show_description %></td>
+        <td class="text-center"><%= equipment.price %></td>
+        <td class="text-center"><%= link_to raw('<span class="glyphicon glyphicon-eye-open"></span>&nbsp;&nbsp;Show'), equipment, class: "btn btn-info" %></td>
+        <td class="text-center"><%= link_to raw('<span class="glyphicon glyphicon-pencil"></span>&nbsp;&nbsp;Edit'), edit_equipment_path(equipment), class: "btn btn-warning" %></td>
+        <td class="text-center"><%= link_to raw('<span class="glyphicon glyphicon-trash"></span>&nbsp;&nbsp;Delete'), equipment, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %></td>
       </tr>
     <% end %>
   </tbody>

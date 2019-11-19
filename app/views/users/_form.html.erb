@@ -22,6 +22,13 @@
 
     <br />
 
+    <% if current_user == @user || current_user.admin %>
+      <%= form.label "New Password" %>
+      <%= form.password_field :password, class: "form-control" %>
+    <% end %>
+
+    <br />
+
     <div class="custom-control custom-switch">
       <%= form.check_box :admin, id: :user_admin, class: "custom-control-input form-control-lg", id: "checkRPass" %>
       <%= form.label :admin, class: "custom-control-label", for: "checkRPass" %>
@@ -29,6 +36,8 @@
 
     <br />
 
-    <%= form.submit "Update User", class: "btn btn-success" %>
+    <%= button_tag(type: 'submit', class: "btn btn-success") do %>
+      <span class="glyphicon glyphicon-floppy-disk"></span>&nbsp;&nbsp;Save
+    <% end %>
   <% end %>
 </div>
