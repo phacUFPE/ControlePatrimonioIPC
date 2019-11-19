@@ -1,4 +1,6 @@
 class EquipmentController < ApplicationController
+  load_and_authorize_resource
+
   before_action :authenticate_user!
   before_action :get_group, only: [:show]
   before_action :set_equipment, only: [:show, :edit, :update, :destroy]

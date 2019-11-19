@@ -2,7 +2,9 @@
 
 <br />
 
-<%= link_to raw('<span class="glyphicon glyphicon-plus"></span>&nbsp;&nbsp;Equipment'), new_equipment_path, class: "btn btn-success" %>
+<% if can? :create, Equipment %>
+  <%= link_to raw('<span class="glyphicon glyphicon-plus"></span>&nbsp;&nbsp;Equipment'), new_equipment_path, class: "btn btn-success" %>
+<% end %>
 
 <br />
 <br />
@@ -31,9 +33,21 @@
         <td class="text-center"><%= equipment.model %></td>
         <td class="text-center"><%= equipment.show_description %></td>
         <td class="text-center"><%= equipment.price %></td>
-        <td class="text-center"><%= link_to raw('<span class="glyphicon glyphicon-eye-open"></span>&nbsp;&nbsp;Show'), equipment, class: "btn btn-info" %></td>
-        <td class="text-center"><%= link_to raw('<span class="glyphicon glyphicon-pencil"></span>&nbsp;&nbsp;Edit'), edit_equipment_path(equipment), class: "btn btn-warning" %></td>
-        <td class="text-center"><%= link_to raw('<span class="glyphicon glyphicon-trash"></span>&nbsp;&nbsp;Delete'), equipment, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %></td>
+        <% if can? :read, Equipment %>
+          <td class="text-center">
+            <%= link_to raw('<span class="glyphicon glyphicon-eye-open"></span>&nbsp;&nbsp;Show'), equipment, class: "btn btn-info" %>
+          </td>
+        <% end %>
+        <% if can? :edit, Equipment %>
+          <td class="text-center">
+            <%= link_to raw('<span class="glyphicon glyphicon-pencil"></span>&nbsp;&nbsp;Edit'), edit_equipment_path(equipment), class: "btn btn-warning" %>
+          </td>
+        <% end %>
+        <% if can? :delete, Equipment %>
+          <td class="text-center">
+            <%= link_to raw('<span class="glyphicon glyphicon-trash"></span>&nbsp;&nbsp;Delete'), equipment, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %>
+          </td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>

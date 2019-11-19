@@ -26,9 +26,11 @@
             <li>
               <%= link_to "Groups", groups_url, class: "nav-link" %>
             </li>
-            <li>
-              <%= link_to "Users", users_url, class: "nav-link" %>
-            </li> 
+            <% if can? :read, User %>
+              <li>
+                <%= link_to "Users", users_url, class: "nav-link" %>
+              </li> 
+            <% end %>
           </ul>
         
           <ul class="nav navbar-nav navbar-right">

@@ -11,8 +11,17 @@
 // about supported directives.
 //
 //= require rails-ujs
-= require turbolinks
 
 //= require jquery3
 //= require popper
 //= require bootstrap
+
+$(document).ready(function () {
+    $("#cCPass").click(function () {
+        if ($(this).is(":checked")) {
+            $("#pass_field").prop("disabled", false);
+        } else {
+            $("#pass_field").prop("disabled", true);
+        }
+    });
+});

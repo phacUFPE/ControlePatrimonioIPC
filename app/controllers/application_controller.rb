@@ -8,4 +8,9 @@ class ApplicationController < ActionController::Base
       redirect_to new_user_session_url
     end
   end
+
+  rescue_from CanCan::AccessDenied do
+    redirect_to equipment_index_url
+  end
+
 end

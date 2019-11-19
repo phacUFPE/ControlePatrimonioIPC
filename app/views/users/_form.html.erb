@@ -22,9 +22,19 @@
 
     <br />
 
+    <div class="custom-control custom-switch">
+      <%= form.check_box :change_password, id: :cCPass, checked: false, class: "custom-control-input form-control-lg" %>
+      <%= form.label :change_password, class: "custom-control-label", for: "cCPass" %>
+    </div>
+
+    <br />
+
     <% if current_user == @user || current_user.admin %>
       <%= form.label "New Password" %>
-      <%= form.password_field :password, class: "form-control" %>
+      <%= form.password_field :password, disabled: true, id: "pass_field", class: "form-control" %>
+      <% if @minimum_password_length %>
+      <em>(<%= @minimum_password_length %> characters minimum)</em>
+      <% end %>
     <% end %>
 
     <br />

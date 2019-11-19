@@ -17,9 +17,11 @@
 
 <br />
 
-<%= link_to raw('<span class="glyphicon glyphicon-pencil"></span>&nbsp;&nbsp;Edit'), edit_user_path(@user), class: "btn btn-warning" %>
+<% if can? :edit, User %>
+  <%= link_to raw('<span class="glyphicon glyphicon-pencil"></span>&nbsp;&nbsp;Edit'), edit_user_path(@user), class: "btn btn-warning" %>
 
-<br />
-<br />
+  <br />
+  <br />
+<% end %>
 
 <%= link_to raw('<span class="glyphicon glyphicon-arrow-left"></span>&nbsp;&nbsp;Back'), users_path, class: "btn btn-info" %>

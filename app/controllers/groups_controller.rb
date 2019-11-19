@@ -1,4 +1,6 @@
 class GroupsController < ApplicationController
+  load_and_authorize_resource
+
   before_action :authenticate_user!
   before_action :get_equipments, only: [:show, :index]
   before_action :set_group, only: [:show, :edit, :update, :destroy]

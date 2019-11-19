@@ -4,7 +4,9 @@
 
 <br />
 
-<%= link_to raw('<span class="glyphicon glyphicon-plus"></span>&nbsp;&nbsp;Group'), new_group_path, class: "btn btn-success" %>
+<% if can? :create, Group %>
+  <%= link_to raw('<span class="glyphicon glyphicon-plus"></span>&nbsp;&nbsp;Group'), new_group_path, class: "btn btn-success" %>
+<% end %>
 
 <br />
 <br />
@@ -25,9 +27,21 @@
         <td class="text-center"><%= group.show_id %></td>
         <td class="text-center"><%= group.name %></td>
         <td class="text-center"><%= group.show_description %></td>
-        <td class="text-center"><%= link_to raw('<span class="glyphicon glyphicon-eye-open"></span>&nbsp;&nbsp;Show'), group, class: "btn btn-info" %></td>
-        <td class="text-center"><%= link_to raw('<span class="glyphicon glyphicon-pencil"></span>&nbsp;&nbsp;Edit'), edit_group_path(group), class: "btn btn-warning" %></td>
-        <td class="text-center"><%= link_to raw('<span class="glyphicon glyphicon-trash"></span>&nbsp;&nbsp;Delete'), group, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %></td>
+        <% if can? :read, Group %>
+          <td class="text-center">
+            <%= link_to raw('<span class="glyphicon glyphicon-eye-open"></span>&nbsp;&nbsp;Show'), group, class: "btn btn-info" %>
+          </td>
+        <% end %>
+        <% if can? :edit, Group %>
+          <td class="text-center">
+            <%= link_to raw('<span class="glyphicon glyphicon-pencil"></span>&nbsp;&nbsp;Edit'), edit_group_path(group), class: "btn btn-warning" %>
+          </td>
+        <% end %>
+        <% if can? :delete, Group %>
+          <td class="text-center">
+            <%= link_to raw('<span class="glyphicon glyphicon-trash"></span>&nbsp;&nbsp;Delete'), group, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %>
+          </td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>
