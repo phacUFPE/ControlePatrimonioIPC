@@ -1,8 +1,6 @@
 <%= form_with(model: equipment, local: true) do |form| %>
   <% if equipment.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(equipment.errors.count, "error") %> prohibited this equipment from being saved:</h2>
-
       <ul>
       <% equipment.errors.full_messages.each do |message| %>
         <li><%= message %></li>
@@ -13,43 +11,43 @@
 
   <br />
 
-  <%= form.label :group %> <br />
+  <%= form.label :group, "#{translate 'equipment.group'}" %> <br />
   <%= form.collection_select :group_id, Group.all, :id, :name, {prompt: false}, {class: "form-control"} %>
 
   <br />
 
-  <%= form.label :equipment_number %>
+  <%= form.label :equipment_number, "#{translate 'equipment.equipment_number'}" %>
   <%= form.number_field :equipment_id, id: :equipment_equipment_id, class: "form-control", placeholder: "1" %>
 
   <br />
 
-  <%= form.label :name %>
+  <%= form.label :name, "#{translate 'equipment.equipment'}" %>
   <%= form.text_field :name, id: :equipment_name, class: "form-control", placeholder: "Yamaha 10 Channels" %>
 
   <br />
 
-  <%= form.label :brand %>
+  <%= form.label :brand, "#{translate 'equipment.brand'}" %>
   <%= form.text_field :brand, id: :equipment_brand, class: "form-control", placeholder: "Yamaha" %>
 
   <br />
 
-  <%= form.label :model %>
+  <%= form.label :model, "#{translate 'equipment.model'}" %>
   <%= form.text_field :model, id: :equipment_model, class: "form-control", placeholder: "Mg10" %>
 
   <br />
 
-  <%= form.label :description %>
+  <%= form.label :description, "#{translate 'equipment.description'}" %>
   <%= form.text_area :description, id: :equipment_description, class: "form-control", placeholder: "Some description" %>
 
   <br />
 
-  <%= form.label :price %>
+  <%= form.label :price, "#{translate 'equipment.price'}" %>
   <%= form.text_field :price, id: :equipment_price, class: "form-control", placeholder: "950.00" %>
 
   <br />
 
   <%= button_tag(type: 'submit', class: "btn btn-success") do %>
-    <span class="glyphicon glyphicon-floppy-disk"></span>&nbsp;&nbsp;Save
+    <span class="glyphicon glyphicon-floppy-disk"></span>&nbsp;&nbsp;<%= translate 'actions.save' %>
   <% end %>
 
 <% end %>

@@ -1,12 +1,12 @@
-<h1>Editing Equipment</h1>
+<h1><%= translate 'equipment.edit_equipment' %></h1>
 
 <%= render 'form', equipment: @equipment %>
 
 <br />
 
-<%= link_to raw('<span class="glyphicon glyphicon-eye-open"></span>&nbsp;&nbsp;Show'), @equipment, class: "btn btn-warning" %>
+<%= link_to raw("<span class='glyphicon glyphicon-eye-open'></span>&nbsp;&nbsp;#{translate 'actions.show'}"), @equipment, class: "btn btn-warning" %>
 
 <br />
 <br />
 
-<%= link_to raw('<span class="glyphicon glyphicon-arrow-left"></span>&nbsp;&nbsp;Back'), equipment_index_path, class: "btn btn-info" %>
+<%= link_to raw("<span class='glyphicon glyphicon-arrow-left'></span>&nbsp;&nbsp;#{translate 'actions.back'}"), equipment_index_path, class: "btn btn-info" %>

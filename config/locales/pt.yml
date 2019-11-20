@@ -29,71 +29,71 @@
 # To learn more, please read the Rails Internationalization guide
 # available at http://guides.rubyonrails.org/i18n.html.
 
-en:
- no_description: No description
+pt:
+ no_description: Sem descrição
  date:
    abbr_day_names:
-   - Sun
-   - Mon
-   - Tue
-   - Wed
-   - Thu
-   - Fri
-   - Sat
+   - Dom
+   - Seg
+   - Ter
+   - Qua
+   - Qui
+   - Sex
+   - Sáb
    abbr_month_names:
    - Jan
-   - Feb
+   - Fev
    - Mar
-   - Apr
-   - May
+   - Abr
+   - Mai
    - Jun
    - Jul
-   - Aug
-   - Sep
-   - Oct
+   - Ago
+   - Set
+   - Out
    - Nov
-   - Dec
+   - Dez
    day_names:
-   - Sunday
-   - Monday
-   - Tuesday
-   - Wednesday
-   - Thursday
-   - Friday
-   - Saturday
+   - Domingo
+   - Segunda-feira
+   - Terça-feira
+   - Quarta-feira
+   - Quinta-feira
+   - Sexta-feira
+   - Sábado
    formats:
-     default: "%Y-%m-%d"
-     long: "%B %d, %Y"
-     short: "%b %d"
+     default: "%d/%m/%Y"
+     long: "%d de %B de %Y"
+     short: "%d de %B"
    month_names:
-   - January
-   - February
-   - March
-   - April
-   - May
-   - June
-   - July
-   - August
-   - September
-   - October
-   - November
-   - December
+   - Janeiro
+   - Fevereiro
+   - Março
+   - Abril
+   - Maio
+   - Junho
+   - Julho
+   - Agosto
+   - Setembro
+   - Outubro
+   - Novembro
+   - Dezembro
    order:
-   - :year
-   - :month
    - :day
+   - :month
+   - :year
  
  actions:
-   show: Show
-   edit: Edit
-   destroy: Delete
-   new: New
-   back: Back
-   save: Save
+   show: Exibir
+   edit: Editar
+   destroy: Deletar
+   new: Novo
+   back: Voltar
+   save: Salvar
  
  helpers:
    submit:
-     create: "Create a %{model}"
-     update: "Update the %{model}"
+     create: "Criar %{model}"
+     update: "Alterar %{model}"
  
- confirm: Are you sure?
+ confirm: Você tem certeza?

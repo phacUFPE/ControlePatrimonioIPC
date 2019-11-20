@@ -20,31 +20,43 @@
         <% if current_user %>
           <ul class="nav navbar-nav navbar-left">
             <li>
-              <%= link_to "Equipments", equipment_index_url, class: "nav-link" %>
+              <%= link_to "#{translate 'equipment.title'}", equipment_index_url, class: "nav-link" %>
             </li>
             &nbsp;
             <li>
-              <%= link_to "Groups", groups_url, class: "nav-link" %>
+              <%= link_to "#{translate 'groups.title'}", groups_url, class: "nav-link" %>
             </li>
             <% if can? :read, User %>
               <li>
-                <%= link_to "Users", users_url, class: "nav-link" %>
+                <%= link_to "#{translate 'users.title'}", users_url, class: "nav-link" %>
               </li> 
             <% end %>
           </ul>
         
           <ul class="nav navbar-nav navbar-right">
             <li>
-                <%= link_to raw("<span class='glyphicon glyphicon-log-out'></span> &nbsp; Logout"), destroy_user_session_path, method: :get, class: "nav-link" %>
+                <%= link_to raw("<span class='glyphicon glyphicon-log-out'></span> &nbsp; #{translate 'devise.login.logout'}"), destroy_user_session_path, method: :get, class: "nav-link" %>
         <% else %>
           <ul class="nav navbar-nav navbar-right">
             <li>
-              <%= link_to raw("<span class='glyphicon glyphicon-log-in'></span> &nbsp; Login"), new_user_session_path, class: "nav-link" %>
+              <%= link_to raw("<span class='glyphicon glyphicon-log-in'></span> &nbsp; #{translate 'devise.login.login'}"), new_user_session_path, class: "nav-link" %>
         <% end %>
           </li>
         </ul>
       </div>
     </nav>
+    <div class="d-flex flex-row-reverse">
+      <div class="p-2 mr-4">
+        <a href="<%= request.path %>?locale=en">
+          <img src="/images/united-states.png" style="width:40px;height:40px;"/>
+        </a>
+      </div>
+      <div class="p-2">
+        <a href="<%= request.path %>?locale=pt">
+          <img src="/images/brazil.png" style="width:40px;height:40px;"/>
+        </a>
+      </div>
+    </div>
   </head>
 
   <body>

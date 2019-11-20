@@ -47,6 +47,10 @@ gem 'autoprefixer-rails', '9.7.1'
 # Cancancan gem
 gem 'cancancan'
 
+# Gem's to languages
+gem 'flag-icons-rails'
+gem 'materializecss'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]

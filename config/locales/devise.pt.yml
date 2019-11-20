@@ -1,0 +1,74 @@
+# Additional translations at https://github.com/plataformatec/devise/wiki/I18n
+
+pt:
+  devise:
+    login:
+      title: "Login"
+      email: "Email"
+      password: "Senha"
+      login: "Entrar"
+      logout: "Sair"
+      forgot_password: "Esqueceu a senha?"
+      remember_me: "Lembrar"
+      never_share_password: "Nunca compartilhe sua senha."
+    confirmations:
+      confirmed: "Seu email foi confirmado com sucesso!"
+      send_instructions: "Você receberá um email com instruções de como confirmar seus email em alguns minutos."
+      send_paranoid_instructions: "Se seu email já existir em nossa base de dados, você receberá um email com instruções de como confirmar seus email em alguns minutos."
+    failure:
+      already_authenticated: "Você já esta logado!"
+      inactive: "Sua conta ainda não foi ativada."
+      invalid: "Invalido(a) %{authentication_keys} ou senha."
+      locked: "Sua conta está bloqueada."
+      last_attempt: "Você tem mais uma tentativa antes de sua conta ser bloqueada."
+      not_found_in_database: "Invalido(a) %{authentication_keys} ou senha."
+      timeout: "Sua sessão expirou. Porfavor logue novamente."
+      unauthenticated: "Você precisa logar antes de continuar"
+      unconfirmed: "Você precisa confirmar seu email antes de continuar."
+    mailer:
+      confirmation_instructions:
+        subject: "Instruções de confirmação"
+      reset_password_instructions:
+        subject: "Instruções para resetar senha"
+      unlock_instructions:
+        subject: "Instruções de desbloqueio"
+      email_changed:
+        subject: "Email Alterado"
+      password_change:
+        subject: "Senha Alterada"
+    omniauth_callbacks:
+      failure: "Não foi possivel autenticar de %{kind} por causa de(a) \"%{reason}\"."
+      success: "Autenticado com sucesso de %{kind} conta."
+    passwords:
+      no_token: "Você não pode acessar essa página sem vir da página de resetar senha, caso tenha vindo, verifique se utilizou o URL inteiro."
+      send_instructions: "Você receberá um email com instruções de como resetar sua senha em alguns minutos."
+      send_paranoid_instructions: "Se seu email já existir em nossa base de dados, você receberá um link de recuperação de senha em seu email em alguns minutos."
+      updated: "Sua senha foi alterada com sucesso. Você está logado agora."
+      updated_not_active: "Sua senha foi alterada com sucesso."
+    registrations:
+      destroyed: "Adeus! Sua conta foi cancelada com sucesso."
+      signed_up: "Bem vindo! Logado com sucesso."
+      signed_up_but_inactive: "Você foi cadastrado com sucesso. Entretanto, não foi possivel logar por causa de sua conta não estar ativada."
+      signed_up_but_locked: "Você foi cadastrado com sucesso. Entretanto, não foi possivel logar por causa de sua conta estar bloqueada."
+      signed_up_but_unconfirmed: "Uma mensagem com o link de confirmação foi enviado ao seu email. Porfavor use o link para ativar sua conta."
+      update_needs_confirmation: "Sua conta foi atualizada com sucesso, mas é preciso checar seu novo email. Foi enviado instruções com o link de confirmação de email."
+      updated: "Sua conta foi atualizada com sucesso."
+      updated_but_not_signed_in: "Sua conta foi atualizada com sucesso, porém sua senha foi altera, e terá que logar novamente."
+    sessions:
+      signed_in: "Logado com sucesso!"
+      signed_out: "Deslogado com sucesso!"
+      already_signed_out: "Deslogado com sucesso!"
+    unlocks:
+      send_instructions: "Você receberá um email com instruções de como desbloquear sua conta em alguns minutos."
+      send_paranoid_instructions: "Se sua conta existir, você receberá um email com instruções de como desbloquear sua conta em alguns minutos."
+      unlocked: "Sua conta foi desbloqueada com sucesso. Porfavor logue para continuar."
+  errors:
+    messages:
+      already_confirmed: "já foi confirmado, porfavor logue."
+      confirmation_period_expired: "precisava ser confirmado em %{period}, porfavor, peça outro."
+      expired: "já expirou, porfavor peça outro"
+      not_found: "não encontrado"
+      not_locked: "não foi travado"
+      not_saved:
+        one: "1 erro esta impedindo este %{resource} de ser salvo:"
+        other: "%{count} erros estão impedindo este %{resource} de ser salvo:"

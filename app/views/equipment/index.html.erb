@@ -1,9 +1,9 @@
-<h1>Equipment</h1>
+<h1><%= translate "equipment.title" %></h1>
 
 <br />
 
 <% if can? :create, Equipment %>
-  <%= link_to raw('<span class="glyphicon glyphicon-plus"></span>&nbsp;&nbsp;Equipment'), new_equipment_path, class: "btn btn-success" %>
+  <%= link_to raw("<span class='glyphicon glyphicon-plus'></span>&nbsp;&nbsp; #{translate 'equipment.new'}"), new_equipment_path, class: "btn btn-success" %>
 <% end %>
 
 <br />
@@ -12,14 +12,14 @@
 <table class="table table-hover">
   <thead>
     <tr>
-      <th class="text-center">Group</th>
-      <th class="text-center">Code</th>
-      <th class="text-center">Equipment</th>
-      <th class="text-center">Brand</th>
-      <th class="text-center">Model</th>
-      <th class="text-center">Description</th>
-      <th class="text-center">Price</th>
-      <th class="text-center" colspan="3">Options</th>
+      <th class="text-center"><%= translate "equipment.group" %></th>
+      <th class="text-center"><%= translate "equipment.code" %></th>
+      <th class="text-center"><%= translate "equipment.equipment" %></th>
+      <th class="text-center"><%= translate "equipment.brand" %></th>
+      <th class="text-center"><%= translate "equipment.model" %></th>
+      <th class="text-center"><%= translate "equipment.description" %></th>
+      <th class="text-center"><%= translate "equipment.price" %></th>
+      <th class="text-center" colspan="3"><%= translate "equipment.options" %></th>
     </tr>
   </thead>
 
@@ -31,21 +31,27 @@
         <td class="text-center"><%= equipment.name %></td>
         <td class="text-center"><%= equipment.brand %></td>
         <td class="text-center"><%= equipment.model %></td>
-        <td class="text-center"><%= equipment.show_description %></td>
+        <td class="text-center">
+          <% if equipment.description.gsub(/\s+/, "") != "" %>
+            <%= equipment.description %>
+          <% else %>
+            <%= translate 'no_description' %>
+          <% end %>
+        </td>
         <td class="text-center"><%= equipment.price %></td>
         <% if can? :read, Equipment %>
           <td class="text-center">
-            <%= link_to raw('<span class="glyphicon glyphicon-eye-open"></span>&nbsp;&nbsp;Show'), equipment, class: "btn btn-info" %>
+            <%= link_to raw("<span class='glyphicon glyphicon-eye-open'></span>&nbsp;&nbsp;#{translate 'actions.show'}"), equipment, class: "btn btn-info" %>
           </td>
         <% end %>
         <% if can? :edit, Equipment %>
           <td class="text-center">
-            <%= link_to raw('<span class="glyphicon glyphicon-pencil"></span>&nbsp;&nbsp;Edit'), edit_equipment_path(equipment), class: "btn btn-warning" %>
+            <%= link_to raw("<span class='glyphicon glyphicon-pencil'></span>&nbsp;&nbsp;#{translate 'actions.edit'}"), edit_equipment_path(equipment), class: "btn btn-warning" %>
           </td>
         <% end %>
         <% if can? :delete, Equipment %>
           <td class="text-center">
-            <%= link_to raw('<span class="glyphicon glyphicon-trash"></span>&nbsp;&nbsp;Delete'), equipment, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %>
+            <%= link_to raw("<span class='glyphicon glyphicon-trash'></span>&nbsp;&nbsp;#{translate 'actions.destroy'}"), equipment, method: :delete, data: { confirm: "#{translate 'confirm'}" }, class: "btn btn-danger" %>
           </td>
         <% end %>
       </tr>
