@@ -1,7 +1,7 @@
 class Equipment < ApplicationRecord
-    belongs_to :group
+    belongs_to :group 
 
-    validates :equipment_id, :presence => true
+    validates :equipment_id, :presence => true, uniqueness: { scope: :group_id, message: "Equipment id already taken"}
     validates :name, :presence => true
     validates :brand, :presence => true
     validates :model, :presence => true
@@ -29,4 +29,9 @@ class Equipment < ApplicationRecord
     def full_code
         self.group_id.to_s.rjust(3, '0') + '.' + self.equipment_id.to_s.rjust(6, '0')
     end
+
+    private
+        def unique_equipment_by_group
+            errors.add(:equipment_id, "ERROR") if Equipment.find_by(group_id: self.grouo_id, equipment_id: self.equipment_id)
+        end
 end
