@@ -4,6 +4,9 @@ class User < ApplicationRecord
   devise :database_authenticatable, :recoverable,
          :rememberable, :validatable
 
+  validates :email, :presence => true
+  validates :name, :presence => true, :uniqueness => true
+
   def admin_text
     if self[:admin]
       self[:admin] = "Yes"
