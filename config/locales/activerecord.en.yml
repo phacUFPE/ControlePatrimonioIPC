@@ -37,16 +37,22 @@ en:
           attributes:
             equipment_id:
               blank: " - Equipment number must be filled"
+              taken: " - Equipment number already taken "
             name:
               blank: " - Equipment name must be filled"
+              taken: " - Equipment name already taken"
             brand: 
               blank: " - Brand must be filled"
+              taken: " - Brand already taken"
             model:
               blank: " - Model must be filled"
+              taken: " - Model already taken"
 
         group:
           attributes:
             id:
               blank: " - Group code must be filled"
+              taken: " - Group code already taken"
             name:
               blank: " - Name must be filled"
+              taken: " - Name already taken"

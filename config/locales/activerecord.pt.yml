@@ -39,16 +39,22 @@ pt:
           attributes:
             equipment_id:
               blank: " - Número do equipamento deve ser preenchido"
+              taken: " - Código já existente"
             name:
               blank: " - Equipamento deve ser preenchido"
+              taken: " - Nome já existente"
             brand: 
               blank: " - Marca deve ser preenchido"
+              taken: " - Marca já existente"
             model:
               blank: " - Modelo deve ser preenchido"
+              taken: " - Modelo já existente"
         
         group:
           attributes:
             id:
               blank: " - Código do grupo deve ser preenchido"
+              taken: " - Código já existente"
             name:
               blank: " - Nome deve ser preenchido"
+              taken: " - Nome já existente"
