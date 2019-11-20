@@ -5,7 +5,7 @@
 pt:
   devise:
     login:
-      title: "Login"
+      title: "Entrar"
       email: "Email"
       password: "Senha"
       login: "Entrar"
