@@ -1,3 +1,5 @@
+#encoding: utf-8
+
 # Files in the config/locales directory are used for internationalization
 # and are automatically loaded by Rails. If you want to use locales other
 # than English, add the necessary files in this directory.
@@ -41,5 +43,9 @@ pt:
     brand: "Marca"
     model: "Modelo"
     description: "Descrição"
+    some_description: "Alguma descrição"
     price: "Preço"
     options: "Opções"
+    name_hint: "Yamaha 10 Canais"
+    brand_hint: "Yamaha"
+    model_hint: "Mg10"

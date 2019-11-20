@@ -1,11 +1,11 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Groups</h1>
+<h1><%= translate 'groups.title' %></h1>
 
 <br />
 
 <% if can? :create, Group %>
-  <%= link_to raw('<span class="glyphicon glyphicon-plus"></span>&nbsp;&nbsp;Group'), new_group_path, class: "btn btn-success" %>
+  <%= link_to raw("<span class='glyphicon glyphicon-plus'></span>&nbsp;&nbsp;#{translate 'groups.new'}"), new_group_path, class: "btn btn-success" %>
 <% end %>
 
 <br />
@@ -14,10 +14,10 @@
 <table class="table table-hover">
   <thead>
     <tr>
-      <th class="text-center">Group code</th>
-      <th class="text-center">Name</th>
-      <th class="text-center">Description</th>
-      <th class="text-center" colspan="3">Options</th>
+      <th class="text-center"><%= translate 'groups.group_code' %></th>
+      <th class="text-center"><%= translate 'groups.name' %></th>
+      <th class="text-center"><%= translate 'groups.description' %></th>
+      <th class="text-center" colspan="3"><%= translate 'group.options' %></th>
     </tr>
   </thead>
 
@@ -26,20 +26,26 @@
       <tr>
         <td class="text-center"><%= group.show_id %></td>
         <td class="text-center"><%= group.name %></td>
-        <td class="text-center"><%= group.show_description %></td>
+        <td class="text-center">
+          <% if group.description.gsub(/\s+/, "") != "" %>
+            <%= group.description %>
+          <% else %>
+            <%= translate 'no_description' %>
+          <% end %>
+        </td>
         <% if can? :read, Group %>
           <td class="text-center">
-            <%= link_to raw('<span class="glyphicon glyphicon-eye-open"></span>&nbsp;&nbsp;Show'), group, class: "btn btn-info" %>
+            <%= link_to raw("<span class='glyphicon glyphicon-eye-open'></span>&nbsp;&nbsp;#{translate 'actions.show'}"), group, class: "btn btn-info" %>
           </td>
         <% end %>
         <% if can? :edit, Group %>
           <td class="text-center">
-            <%= link_to raw('<span class="glyphicon glyphicon-pencil"></span>&nbsp;&nbsp;Edit'), edit_group_path(group), class: "btn btn-warning" %>
+            <%= link_to raw("<span class='glyphicon glyphicon-pencil'></span>&nbsp;&nbsp;#{translate 'actions.edit'}"), edit_group_path(group), class: "btn btn-warning" %>
           </td>
         <% end %>
         <% if can? :delete, Group %>
           <td class="text-center">
-            <%= link_to raw('<span class="glyphicon glyphicon-trash"></span>&nbsp;&nbsp;Delete'), group, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %>
+            <%= link_to raw("<span class='glyphicon glyphicon-trash'></span>&nbsp;&nbsp;#{translate 'actions.destroy'}"), group, method: :delete, data: { confirm: "#{translate 'confirm'}" }, class: "btn btn-danger" %>
           </td>
         <% end %>
       </tr>

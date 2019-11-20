@@ -43,3 +43,10 @@ en:
               blank: " - Brand must be filled"
             model:
               blank: " - Model must be filled"
+
+        group:
+          attributes:
+            id:
+              blank: " - Group code must be filled"
+            name:
+              blank: " - Name must be filled"

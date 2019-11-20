@@ -1,7 +1,7 @@
-<h1>New Group</h1>
+<h1><%= translate 'groups.new' %></h1>
 
 <%= render 'form', group: @group %>
 
 <br />
 
-<%= link_to raw('<span class="glyphicon glyphicon-arrow-left"></span>&nbsp;&nbsp;Back'), groups_path, class: "btn btn-info" %>
+<%= link_to raw("<span class='glyphicon glyphicon-arrow-left'></span>&nbsp;&nbsp;#{translate 'actions.back'}"), groups_path, class: "btn btn-info" %>

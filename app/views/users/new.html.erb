@@ -1,8 +1,8 @@
-<h1>New User</h1>
+<h1><%= translate 'users.new' %></h1>
 
 <%= render 'form', user: @user %>
 
 <br />
 
-<%= link_to raw('<span class="glyphicon glyphicon-arrow-left"></span>&nbsp;&nbsp;Back'), users_path, class: "btn btn-info" %>
+<%= link_to raw("<span class='glyphicon glyphicon-arrow-left'></span>&nbsp;&nbsp;#{translate 'actions.back'}"), users_path, class: "btn btn-info" %>
 

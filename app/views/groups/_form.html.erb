@@ -1,8 +1,6 @@
 <%= form_with(model: group, local: true) do |form| %>
   <% if group.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(group.errors.count, "error") %> prohibited this group from being saved:</h2>
-
       <ul>
       <% group.errors.full_messages.each do |message| %>
         <li><%= message %></li>
@@ -13,23 +11,23 @@
 
   <br />
 
-  <%= form.label :group_cod %>
+  <%= form.label :group_cod, "#{translate 'groups.group_code'}" %>
   <%= form.number_field :id, class: "form-control", placeholder: "1" %>
 
   <br />
 
-  <%= form.label :name %>
-  <%= form.text_field :name, id: :group_name, class: "form-control", placeholder: "Sound equipment" %>
+  <%= form.label :name, "#{translate 'groups.name'}" %>
+  <%= form.text_field :name, id: :group_name, class: "form-control", placeholder: "#{translate 'groups.name_hint'}" %>
 
   <br />
 
-  <%= form.label :description %>
-  <%= form.text_area :description, id: :group_description, class: "form-control", placeholder: "Description" %>
+  <%= form.label :description, "#{translate 'groups.description'}" %>
+  <%= form.text_area :description, id: :group_description, class: "form-control", placeholder: "#{translate 'groups.some_description'}" %>
 
   <br />
 
   <%= button_tag(type: 'submit', class: "btn btn-success") do %>
-    <span class="glyphicon glyphicon-floppy-disk"></span>&nbsp;&nbsp;Save
+    <span class="glyphicon glyphicon-floppy-disk"></span>&nbsp;&nbsp;<%= translate 'actions.save' %>
   <% end %>
 
 <% end %>

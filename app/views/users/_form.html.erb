@@ -2,8 +2,6 @@
   <%= form_with(model: user, local: true) do |form| %>
     <% if user.errors.any? %>
       <div id="error_explanation">
-        <h2><%= pluralize(user.errors.count, "error") %> prohibited this user from being saved:</h2>
-
         <ul>
         <% user.errors.full_messages.each do |message| %>
           <li><%= message %></li>
@@ -12,25 +10,25 @@
       </div>
     <% end %>
 
-    <%= form.label :email %>
+    <%= form.label :email, "#{translate 'users.email'}" %>
     <%= form.text_field :email, id: :user_email, class: "form-control" %>
 
     <br />
 
-    <%= form.label :name %>
+    <%= form.label :name, "#{translate 'users.name'}" %>
     <%= form.text_field :name, id: :user_name, class: "form-control" %>
 
     <br />
 
     <div class="custom-control custom-switch">
       <%= form.check_box :change_password, id: :cCPass, checked: false, class: "custom-control-input form-control-lg" %>
-      <%= form.label :change_password, class: "custom-control-label", for: "cCPass" %>
+      <%= form.label :change_password, "#{translate 'users.change_password'}", class: "custom-control-label", for: "cCPass" %>
     </div>
 
     <br />
 
     <% if current_user == @user || current_user.admin %>
-      <%= form.label "New Password" %>
+      <%= form.label "#{translate 'users.new_password'}" %>
       <%= form.password_field :password, disabled: true, id: "pass_field", class: "form-control" %>
       <% if @minimum_password_length %>
       <em>(<%= @minimum_password_length %> characters minimum)</em>
@@ -40,14 +38,14 @@
     <br />
 
     <div class="custom-control custom-switch">
-      <%= form.check_box :admin, id: :user_admin, class: "custom-control-input form-control-lg", id: "checkRPass" %>
-      <%= form.label :admin, class: "custom-control-label", for: "checkRPass" %>
+      <%= form.check_box :admin, class: "custom-control-input form-control-lg", id: "checkRPass" %>
+      <%= form.label :admin, "#{translate 'users.admin'}",class: "custom-control-label", for: "checkRPass" %>
     </div>
 
     <br />
 
     <%= button_tag(type: 'submit', class: "btn btn-success") do %>
-      <span class="glyphicon glyphicon-floppy-disk"></span>&nbsp;&nbsp;Save
+      <span class="glyphicon glyphicon-floppy-disk"></span>&nbsp;&nbsp;<%= translate 'actions.save' %>
     <% end %>
   <% end %>
 </div>

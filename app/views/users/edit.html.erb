@@ -1,12 +1,14 @@
-<h1>Editing User</h1>
+<h1><%= translate 'users.editing_user' %></h1>
+
+<br />
 
 <%= render 'form', user: @user %>
 
 <br />
 
-<%= link_to raw('<span class="glyphicon glyphicon-eye-open"></span>&nbsp;&nbsp;Show'), @user, class: "btn btn-warning" %>
+<%= link_to raw("<span class='glyphicon glyphicon-eye-open'></span>&nbsp;&nbsp;#{translate 'actions.show'}"), @user, class: "btn btn-warning" %>
 
 <br />
 <br />
 
-<%= link_to raw('<span class="glyphicon glyphicon-arrow-left"></span>&nbsp;&nbsp;Back'), users_path, class: "btn btn-info" %>
+<%= link_to raw("<span class='glyphicon glyphicon-arrow-left'></span>&nbsp;&nbsp;#{translate 'actions.back'}"), users_path, class: "btn btn-info" %>

@@ -22,22 +22,22 @@
   <br />
 
   <%= form.label :name, "#{translate 'equipment.equipment'}" %>
-  <%= form.text_field :name, id: :equipment_name, class: "form-control", placeholder: "Yamaha 10 Channels" %>
+  <%= form.text_field :name, id: :equipment_name, class: "form-control", placeholder: "#{translate 'equipment.name_hint'}" %>
 
   <br />
 
   <%= form.label :brand, "#{translate 'equipment.brand'}" %>
-  <%= form.text_field :brand, id: :equipment_brand, class: "form-control", placeholder: "Yamaha" %>
+  <%= form.text_field :brand, id: :equipment_brand, class: "form-control", placeholder: "#{translate 'equipment.brand_hint'}" %>
 
   <br />
 
   <%= form.label :model, "#{translate 'equipment.model'}" %>
-  <%= form.text_field :model, id: :equipment_model, class: "form-control", placeholder: "Mg10" %>
+  <%= form.text_field :model, id: :equipment_model, class: "form-control", placeholder: "#{translate 'equipment.model_hint'}" %>
 
   <br />
 
   <%= form.label :description, "#{translate 'equipment.description'}" %>
-  <%= form.text_area :description, id: :equipment_description, class: "form-control", placeholder: "Some description" %>
+  <%= form.text_area :description, id: :equipment_description, class: "form-control", placeholder: "#{translate 'equipment.some_description'}" %>
 
   <br />
 

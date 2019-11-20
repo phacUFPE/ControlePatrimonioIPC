@@ -1,27 +1,29 @@
-<p id="notice"><%= notice %></p>
-
 <p>
-  <strong>Email:</strong>
+  <strong><%= translate 'users.email' %>:</strong>
   <%= @user.email %>
 </p>
 
 <p>
-  <strong>Name:</strong>
+  <strong><%= translate 'users.name' %>:</strong>
   <%= @user.name %>
 </p>
 
 <p>
-  <strong>Admin:</strong>
-  <%= @user.admin_text %>
+  <strong><%= translate 'users.admin' %>:</strong>
+  <% if @user.admin == true %>
+    <%= translate 'yes' %>
+  <% else %>
+    <%= translate 'no' %>
+  <% end %>
 </p>
 
 <br />
 
 <% if can? :edit, User %>
-  <%= link_to raw('<span class="glyphicon glyphicon-pencil"></span>&nbsp;&nbsp;Edit'), edit_user_path(@user), class: "btn btn-warning" %>
+  <%= link_to raw("<span class='glyphicon glyphicon-pencil'></span>&nbsp;&nbsp;#{translate 'actions.edit'}"), edit_user_path(@user), class: "btn btn-warning" %>
 
   <br />
   <br />
 <% end %>
 
-<%= link_to raw('<span class="glyphicon glyphicon-arrow-left"></span>&nbsp;&nbsp;Back'), users_path, class: "btn btn-info" %>
+<%= link_to raw("<span class='glyphicon glyphicon-arrow-left'></span>&nbsp;&nbsp;#{translate 'actions.back'}"), users_path, class: "btn btn-info" %>
