@@ -36,7 +36,7 @@ class EquipmentController < ApplicationController
       if @group
         @equipment.group = @group
         if @equipment.save
-          format.html { redirect_to @equipment, notice: 'Equipment was successfully created.' }
+          format.html { redirect_to @equipment, notice: "#{translate 'equipment.created'}" }
           format.json { render :show, status: :created, location: @equipment }
         else
           format.html { render :new }
@@ -54,7 +54,7 @@ class EquipmentController < ApplicationController
   def update
     respond_to do |format|
       if @equipment.update(equipment_params)
-        format.html { redirect_to @equipment, notice: 'Equipment was successfully updated.' }
+        format.html { redirect_to @equipment, notice: "#{translate 'equipment.updated'}" }
         format.json { render :show, status: :ok, location: @equipment }
       else
         format.html { render :edit }
@@ -68,7 +68,7 @@ class EquipmentController < ApplicationController
   def destroy
     @equipment.destroy
     respond_to do |format|
-      format.html { redirect_to equipment_index_url, notice: 'Equipment was successfully destroyed.' }
+      format.html { redirect_to equipment_index_url, notice: "#{translate 'equipment.destroyed'}" }
       format.json { head :no_content }
     end
   end

@@ -33,14 +33,17 @@
 
 pt:
   groups:
-    title: "Grupos"
-    editing_group: "Editando Grupo"
-    new: "Novo Grupo"
-    code: "Código"
-    group_code: "Código do Grupo"
-    name: "Nome"
-    description: "Descrição"
-    some_description: "Alguma descrição"
-    options: "Opções"
-    equipments_group: "Equipamentos do Grupo"
-    name_hint: "Equipamentos de som"
+    title: Grupos
+    editing_group: Editando Grupo
+    new: Novo Grupo
+    code: Código
+    group_code: Código do Grupo
+    name: Nome
+    description: Descrição
+    some_description: Alguma descrição
+    options: Opções
+    equipments_group: Equipamentos do Grupo
+    name_hint: Equipamentos de som
+    created: Grupo criado com sucesso!
+    updated: Grupo atualizado com sucesso
+    destroyed: Grupo deletado com sucesso

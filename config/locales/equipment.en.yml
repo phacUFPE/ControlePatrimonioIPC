@@ -31,19 +31,22 @@
 
 en:
   equipment:
-    edit_equipment: "Editing Equipment"
-    equipment_number: "Equipment number"
-    title: "Equipments"
-    new: "New Equipment"
-    group: "Group"
-    code: "Code"
-    equipment: "Equipment"
-    brand: "Brand"
-    model: "Model"
-    description: "Description"
-    some_description: "Some description"
-    price: "Price"
-    options: "Options"
-    name_hint: "Yamaha 10 Channels"
-    brand_hint: "Yamaha"
-    model_hint: "Mg10"
+    edit_equipment: Editing Equipment
+    equipment_number: Equipment number
+    title: Equipments
+    new: New Equipment
+    group: Group
+    code: Code
+    equipment: Equipment
+    brand: Brand
+    model: Model
+    description: Description
+    some_description: Some description
+    price: Price
+    options: Options
+    name_hint: Yamaha 10 Channels
+    brand_hint: Yamaha
+    model_hint: Mg10
+    created: Equipment was successfully created.
+    updated: Equipment was successfully updated.
+    destroyed: Equipment was successfully deleted.

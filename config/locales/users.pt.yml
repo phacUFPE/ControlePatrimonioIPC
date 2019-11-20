@@ -42,3 +42,6 @@ pt:
     new_password: Nova senha
     change_password: Mudar senha
     editing_user: Editando Usuário
+    created: Usuário criado com sucesso!
+    updated: Usuário atualizado com sucesso
+    destroyed: Usuário deletado com sucesso

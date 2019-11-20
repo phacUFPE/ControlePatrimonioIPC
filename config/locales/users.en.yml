@@ -42,3 +42,7 @@ en:
     new_password: New password
     change_password: Change password
     editing_user: Editing User
+    created: User was successfully created.
+    updated: User was successfully updated.
+    destroyed: User was successfully deleted.
+    

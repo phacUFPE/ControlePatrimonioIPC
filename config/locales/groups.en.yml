@@ -31,13 +31,16 @@
 
 en:
   groups:
-    title: "Groups"
-    new: "New Group"
-    code: "Code"
-    group_code: "Group code"
-    name: "Name"
-    description: "Description"
-    some_description: "Some description"
-    options: "Options"
-    equipments_group: "Group Equipments"
-    name_hint: "Sound equipment"
+    title: Groups
+    new: New Group
+    code: Code
+    group_code: Group code
+    name: Name
+    description: Description
+    some_description: Some description
+    options: Options
+    equipments_group: Group Equipments
+    name_hint: Sound equipment
+    created: Group was successfully created.
+    updated: Group was successfully updated.
+    destroyed: Group was successfully deleted.
