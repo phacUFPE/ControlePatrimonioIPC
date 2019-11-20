@@ -1,7 +1,7 @@
 class Group < ApplicationRecord
     has_many :equipment, dependent: :destroy
 
-    validates :id, :presence => true
+    validates :id, :presence => true, :uniqueness => true
     validates :name, :presence => true
 
     def show_description
