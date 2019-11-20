@@ -2,7 +2,7 @@ class Group < ApplicationRecord
     has_many :equipment, dependent: :destroy
 
     validates :id, :presence => true, :uniqueness => true
-    validates :name, :presence => true
+    validates :name, :presence => true, :uniqueness => true
 
     def show_description
         if self[:description] != nil
