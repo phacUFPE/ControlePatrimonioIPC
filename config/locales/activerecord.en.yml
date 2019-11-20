@@ -56,3 +56,11 @@ en:
             name:
               blank: " - Name must be filled"
               taken: " - Name already taken"
+
+        user:
+          attributes:
+            email:
+              blank: " - Email must be filled"
+              taken: " - Email already taken"
+            password:
+              blank: " - Password must be filled"

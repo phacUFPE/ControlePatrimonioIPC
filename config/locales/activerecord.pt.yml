@@ -58,3 +58,11 @@ pt:
             name:
               blank: " - Nome deve ser preenchido"
               taken: " - Nome já existente"
+
+        user:
+          attributes:
+            email:
+              blank: " - Email deve ser preenchido"
+              taken: " - Email já existente"
+            password:
+              blank: " - Senha deve ser preenchido"
