@@ -18,8 +18,13 @@ class EquipmentController < ApplicationController
 
   # GET /equipment/new
   def new
-    @group     = Group.new
-    @equipment = Equipment.new
+    @all_group = Group.all.find_all
+    if @all_group.size < 1
+      @group     = Group.new
+      @equipment = Equipment.new
+    else
+      redirect_to equipment_index_url, notice: "#{translate 'equipment.none_group_created'}"
+    end
   end
 
   # GET /equipment/1/edit
