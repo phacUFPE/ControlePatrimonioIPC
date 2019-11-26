@@ -50,3 +50,4 @@ en:
     created: Equipment was successfully created.
     updated: Equipment was successfully updated.
     destroyed: Equipment was successfully deleted.
+    none_group_created: Please create a group before a equipment.

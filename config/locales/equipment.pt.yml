@@ -52,3 +52,4 @@ pt:
     created: Equipamento criado com sucesso!
     updated: Equipamento atualizado com sucesso
     destroyed: Equipamento deletado com sucesso
+    none_group_created: Porfavor crie um grupo antes de criar um equipamento.
