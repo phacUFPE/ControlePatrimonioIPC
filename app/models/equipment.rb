@@ -29,9 +29,4 @@ class Equipment < ApplicationRecord
     def full_code
         self.group_id.to_s.rjust(3, '0') + '.' + self.equipment_id.to_s.rjust(6, '0')
     end
-
-    private
-        def unique_equipment_by_group
-            errors.add(:equipment_id, "ERROR") if Equipment.find_by(group_id: self.grouo_id, equipment_id: self.equipment_id)
-        end
 end
